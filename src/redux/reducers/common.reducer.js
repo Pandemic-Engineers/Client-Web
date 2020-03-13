@@ -4,7 +4,12 @@ import {
   REDIRECT
 } from "../constants/common.action.types";
 import { LOGIN, REGISTER } from "../constants/auth.action.types";
-import { ASSET_CREATE, ASSET_UPDATE } from "../constants/asset.action.types";
+import {
+  ASSET_CREATE,
+  ASSET_UPDATE,
+  SITE_CREATE,
+  LOG_EVENT
+} from "../constants/asset.action.types";
 
 const defaultState = {
   currentUser: null,
@@ -33,6 +38,21 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         redirectTo: action.error ? null : "/assets"
+      };
+    case SITE_CREATE:
+      return {
+        ...state,
+        redirectTo: action.error ? null : "/sites"
+      };
+    case LOG_EVENT:
+      let redirectTo = !action.from
+        ? "/sites"
+        : action.from === "site"
+        ? `/sites/${action.key}`
+        : `/assets/${action.key}`;
+      return {
+        ...state,
+        redirectTo: action.error ? null : redirectTo
       };
     case ASYNC_START:
       return { ...state, inProgress: true };

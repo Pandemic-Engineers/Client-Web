@@ -2,19 +2,19 @@ import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { createAsset } from "../redux/actions/asset.actions";
-import ListErrors from "../components/ListErrors";
+import { createSite } from "../../redux/actions/asset.actions";
+import ListErrors from "../../components/ListErrors";
 
-const AssetSchema = Yup.object().shape({
+const SiteSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Asset name must be at least 2 letters")
-    .required("Asset name is required.")
+    .min(2, "Site name must be at least 2 letters")
+    .required("Site name is required.")
 });
 
-function AssetAdd() {
+export default () => {
   const dispatch = useDispatch();
   const asset = useSelector(state => state.asset);
-  const handleSubmit = name => dispatch(createAsset(name));
+  const handleSubmit = name => dispatch(createSite(name));
   return (
     <div id="focus">
       <div id="focus-header">
@@ -27,7 +27,7 @@ function AssetAdd() {
               </div>
               <Formik
                 initialValues={{ name: "" }}
-                validationSchema={AssetSchema}
+                validationSchema={SiteSchema}
                 onSubmit={(payload, { setSubmitting }) => {
                   handleSubmit(payload.name);
                   setSubmitting(false);
@@ -67,5 +67,4 @@ function AssetAdd() {
       </div>
     </div>
   );
-}
-export default AssetAdd;
+};

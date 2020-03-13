@@ -9,9 +9,13 @@ import { redirect } from "../redux/actions/common.actions";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
-import Assets from "./Assets";
-import AssetDetail from "./AssetDetail";
-import AssetAdd from "./AssetAdd";
+import Assets from "./Assets/Index";
+import AssetDetail from "./Assets/AssetDetail";
+import AssetAdd from "./Assets/AssetAdd";
+import Sites from "./Sites/Index";
+import SiteDetail from "./Sites/SiteDetail";
+import SiteAdd from "./Sites/SiteAdd";
+import EventAdd from "./Events/Add";
 
 function App() {
   const common = useSelector(state => state.common);
@@ -39,6 +43,10 @@ function App() {
           <Route exact path="/assets/add" component={AssetAdd} />
           <Route path="/assets/:key" component={AssetDetail} />>
           <Route path="/assets" component={Assets} />
+          <Route exact path="/sites/add" component={SiteAdd} />
+          <Route path="/sites/:key" component={SiteDetail} />>
+          <Route path="/sites" component={Sites} />
+          <Route path="/events/add" component={EventAdd} />
           <Redirect from="*" to="/" />
         </Switch>
       </ErrorBoundary>

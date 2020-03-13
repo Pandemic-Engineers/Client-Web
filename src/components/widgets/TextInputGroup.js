@@ -2,17 +2,13 @@ import React from "react";
 import classnames from "classnames";
 
 const InputFeedback = ({ error }) =>
-  error ? <div className="input-feedback">{error}</div> : null;
+  error ? <div className="error-message">{error}</div> : null;
 
 const Label = ({ error, className, children, ...props }) => {
-  return (
-    <label className="label" {...props}>
-      {children}
-    </label>
-  );
+  return <label {...props}>{children}</label>;
 };
 
-const TextInput = ({
+const TextInputGroup = ({
   type,
   id,
   label,
@@ -23,9 +19,9 @@ const TextInput = ({
   ...props
 }) => {
   const classes = classnames(
-    "input-group",
+    "form-item",
     {
-      "animated shake error": !!error
+      error: !!error
     },
     className
   );
@@ -34,16 +30,9 @@ const TextInput = ({
       <Label htmlFor={id} error={error}>
         {label}
       </Label>
-      <input
-        id={id}
-        className="text-input"
-        type={type}
-        value={value}
-        onChange={onChange}
-        {...props}
-      />
+      <input id={id} type={type} value={value} onChange={onChange} {...props} />
       <InputFeedback error={error} />
     </div>
   );
 };
-export { TextInput };
+export { TextInputGroup };

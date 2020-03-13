@@ -1,34 +1,34 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAssetList } from "../redux/actions/asset.actions";
-import AssetList from "../components/AssetList";
+import { getSiteList, unloadSiteList } from "../../redux/actions/asset.actions";
+import SiteList from "../../components/SiteList";
 
-function Assets() {
+export default () => {
   const asset = useSelector(state => state.asset);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAssetList());
+    dispatch(getSiteList());
+    return () => dispatch(unloadSiteList());
   }, []);
 
-  if (!asset.assets) {
+  if (!asset.sites) {
     return <div>loading...</div>;
   }
+
   return (
     <div id="main">
       <div id="content">
         <div id="content-wrap">
           <div className="box-header">
-            <Link className="header-button" to="/assets/add">
+            <Link className="header-button" to="/sites/add">
               Add
             </Link>
-            <h2>Asset List</h2>
+            <h2>Site List</h2>
           </div>
-          <AssetList data={asset.assets} />
+          <SiteList data={asset.sites} />
         </div>
       </div>
     </div>
   );
-}
-
-export default Assets;
+};

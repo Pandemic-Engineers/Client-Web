@@ -12,6 +12,9 @@ function Home() {
         <Link to={"/register"}>Register</Link>
       </p>
       <p>
+        <Link to={"/sites"}>Sites</Link>
+      </p>
+      <p>
         <Link to={"/assets"}>Assets</Link>
       </p>
     </div>

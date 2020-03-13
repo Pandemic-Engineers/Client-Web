@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getAsset,
+  getAssetDetail,
   updateAsset,
-  onUnloadAssetDetail
-} from "../redux/actions/asset.actions";
+  unloadAssetDetail
+} from "../../redux/actions/asset.actions";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import ListErrors from "../components/ListErrors";
+import ListErrors from "../../components/ListErrors";
+import EventList from "../../components/EventList";
 
 const AssetSchema = Yup.object().shape({
   name: Yup.string()
@@ -21,8 +22,8 @@ function Assets({}) {
   const asset = useSelector(state => state.asset);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAsset(key));
-    return () => dispatch(onUnloadAssetDetail()); // => componentWillUnmount
+    dispatch(getAssetDetail(key));
+    return () => dispatch(unloadAssetDetail()); // => componentWillUnmount
   }, [key]);
   // const handleSubmit = (name) => dispatch(updateAsset(key, name));
 
@@ -34,7 +35,7 @@ function Assets({}) {
     // window.alert(name)
     dispatch(updateAsset(key, name));
   };
-
+  const events = asset.events.events;
   return (
     <div id="main">
       <div id="content">
@@ -87,6 +88,19 @@ function Assets({}) {
                 </Form>
               )}
             </Formik>
+          </div>
+
+          <div className="focus-wrap">
+            <div className="box-header">
+              <Link
+                className="header-button"
+                to={`/events/add?from=asset&key=${asset.asset.key}`}
+              >
+                Add Events
+              </Link>
+              <h2>Recent Events</h2>
+            </div>
+            <EventList data={events} />
           </div>
         </div>
       </div>
