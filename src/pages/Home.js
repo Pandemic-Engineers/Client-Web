@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div id="">
-      Home page
       <p>
         <Link to={"/login"}>Login</Link>
       </p>

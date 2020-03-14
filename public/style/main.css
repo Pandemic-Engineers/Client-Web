@@ -1,11 +1,12 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-body {font-size:12.8px; font-family:'Montserrat', sans-serif; font-weight:300; line-height: normal; height:100%; background:#F0F3F5; color:#2D3242;}
+body {font-size:12.8px; font-family:'Baloo 2', sans-serif; font-weight:300; line-height: normal; height:100%; background:#F0F3F5; color:#2D3242;}
 html, #root, #site-wrap {height:100%; background:#F0F3F5;}
 * {-webkit-font-smoothing: antialiased;}
-a {text-decoration: none; color:#FA6C39; cursor: pointer}
+a {text-decoration: none; color:#25376c; cursor: pointer}
+a:hover {color:#29479f;}
 h1 {font-size: 1.2rem; font-size:1.5rem; padding-bottom: 20px; font-weight: 700;}
-button {background:#FA6C39; color: #fff; font-weight: 600; cursor:pointer; outline:none; border:none; border-radius: 3px}
-button:hover {background: #eb8a64; cursor: pointer;}
+button {background:#25376c; color: #fff; font-weight: 600; cursor:pointer; outline:none; border:none; border-radius: 3px}
+button:hover {background: #29479f; cursor: pointer;}
 input {outline:none;}
 strong {font-weight: bold}
 
@@ -103,7 +104,7 @@ strong {font-weight: bold}
 #nav-last a:hover i {color:#FA6C39}
 
 #focus { text-align: center; background:#323b57; background-size:cover; min-height:100% }
-#focus-header {padding:30px 0 0 0; text-align: left;}
+#focus-header {padding:80px 0 0 0; text-align: left;}
 #focus-header h1 {font-weight: 700; color:#fff; text-align: center}
 .focus-wrap {border-radius: 8px; margin:3% auto 0 auto; max-width:500px; background:#fff; border: solid 1px #EAECF4; border-radius: 8px; padding-bottom: 20px}
 .focus-wrap h2 {border-bottom: none; font-size: 1rem; padding: 0 3.5%; font-weight: bold}
@@ -145,8 +146,8 @@ strong {font-weight: bold}
 .form-item label {font-size: 0.9rem; color:#111; text-align: left; display: block; text-transform: uppercase; margin-bottom: 10px;}
 .form-item label span {font-size:0.8rem; color:#777; text-transform: none;}
 .form-info {font-size:1rem; text-align: left; font-weight: bold; display: block;}
-#focus .form-item label {margin-bottom: 18px; border: none }
-.form-item input {width:96%; font-size: 1rem; padding: 12px 2%; color:#111; border: solid 1px #EAECF4; background:#f3f3f3; border-radius: 3px;}
+#focus .form-item label {margin-bottom: 10px; border: none }
+.form-item input {width:100%; font-size: 1rem; padding: 12px 2%; color:#111; border: solid 1px #EAECF4; background:#f3f3f3; border-radius: 3px;}
 .form-item input::placeholder {color:#bbb}
 .form-item textarea {width:96%; font-size: 1.2rem; padding: 2px 2%; border: solid 1px #EAECF4; color:#111; border-radius: 5px; height:150px}
 .form-item textarea.Shorter {height:60px;}
@@ -164,7 +165,7 @@ strong {font-weight: bold}
 .text-box {width:50%; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #999; color:#111; margin-top:10px}
 .text-box::placeholder {color:#bbb}
 .form-rule {border-top: solid 1px #EAECF4; margin-top:20px; padding-top:20px;}
-.form-item .light-button {clear:both; display: block; padding: 16px 0; color:#2D3242; background:#EAECF4; font-size: 1rem;}
+.form-item .light-button {clear:both; display: block; padding: 16px 0; color:#2D3242; background:#EAECF4; font-size: 1rem; text-align: center;}
 .form-item .light-button:hover {background: #fde288;}
 .error input {border-color: red;}
 .StripeElement {box-sizing: border-box; padding: 12px 2%; border: 1px solid #EAECF4; border-radius: 3px; background-color: white; box-shadow: 0 1px 3px 0 #f3f3f3;}

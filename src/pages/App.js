@@ -5,7 +5,6 @@ import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { REACT_APP_SITE_NAME } from "../config";
 import { redirect } from "../redux/actions/common.actions";
-
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
@@ -36,8 +35,7 @@ function App() {
       </Helmet>
       <ErrorBoundary>
         <Switch>
-          <Route exact path="/" component={Home} />
-          {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
+          <Route exact path="/" component={Login} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path="/assets/add" component={AssetAdd} />

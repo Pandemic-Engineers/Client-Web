@@ -8,7 +8,7 @@ export default props => {
         <tr>
           <th>Key</th>
           <th>Name</th>
-          <th>Created</th>
+          <th className="last">Created</th>
         </tr>
       </thead>
       <tbody>

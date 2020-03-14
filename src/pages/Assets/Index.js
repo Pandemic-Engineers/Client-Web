@@ -6,6 +6,8 @@ import {
   unloadAssetList
 } from "../../redux/actions/asset.actions";
 import AssetList from "../../components/AssetList";
+import Nav from "../../components/Nav";
+import Header from "../../components/Header";
 
 function Assets() {
   const asset = useSelector(state => state.asset);
@@ -16,17 +18,19 @@ function Assets() {
   }, []);
 
   if (!asset.assets) {
-    return <div>loading...</div>;
+    return <div id="loading">loading...</div>;
   }
   return (
     <div id="main">
+      <Nav />
       <div id="content">
+        <Header />
         <div id="content-wrap">
           <div className="box-header">
             <Link className="header-button" to="/assets/add">
-              Add
+              Add Asset
             </Link>
-            <h2>Asset List</h2>
+            <h2>Assets List</h2>
           </div>
           <AssetList data={asset.assets} />
         </div>

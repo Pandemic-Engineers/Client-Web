@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/actions/auth.actions";
 import ListErrors from "../components/ListErrors";
+import { Link } from "react-router-dom";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -22,12 +23,12 @@ function Login() {
   return (
     <div id="focus">
       <div id="focus-header">
-        <h1>Pellar Theia</h1>
+        <h1>Pandemic Alert System</h1>
         <div className="main">
           <div className="main-wrap">
             <div className="focus-wrap">
               <div className="box-header">
-                <h2>Login</h2>
+                <h2>Log in</h2>
               </div>
               <Formik
                 initialValues={{ email: "", password: "" }}
@@ -78,6 +79,12 @@ function Login() {
                       <button type="submit" disabled={isSubmitting}>
                         {isSubmitting ? "Please wait..." : "Login"}
                       </button>
+                    </div>
+
+                    <div className="form-item form-rule">
+                      <Link className="light-button" to={"/register"}>
+                        Register for an account
+                      </Link>
                     </div>
                   </Form>
                 )}
