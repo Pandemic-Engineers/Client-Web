@@ -30,117 +30,116 @@ function Register() {
   return (
     <div id="focus">
       <div id="focus-header">
-        <h1>Pellar Theia</h1>
-        <div className="main">
-          <div className="main-wrap">
-            <div className="focus-wrap">
-              <div className="box-header">
-                <h2>Register for an account</h2>
-              </div>
-              <Formik
-                initialValues={{
-                  firstname: "",
-                  lastname: "",
-                  email: "",
-                  password: ""
-                }}
-                validationSchema={RegisterSchema}
-                onSubmit={(payload, { setSubmitting }) => {
-                  // alert(payload.email)
-                  handleSubmit(
-                    payload.firstname,
-                    payload.lastname,
-                    payload.email,
-                    payload.password
-                  );
-                  setSubmitting(false);
-                }}
-              >
-                {({ touched, errors, isSubmitting }) => (
-                  <Form>
-                    <div
-                      className={`form-item ${
-                        touched.firstname && errors.firstname ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="firstname">First Name</label>
-                      <Field
-                        name="firstname"
-                        type="text"
-                        placeholder="Enter your first name"
-                      />
-                      <ErrorMessage
-                        name="firstname"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <div
-                      className={`form-item ${
-                        touched.lastname && errors.lastname ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="lastname">Last name</label>
-                      <Field
-                        name="lastname"
-                        type="text"
-                        placeholder="Enter your last name"
-                      />
-                      <ErrorMessage
-                        name="lastname"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <div
-                      className={`form-item ${
-                        touched.email && errors.email ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="email">Email</label>
-                      <Field
-                        name="email"
-                        type="email"
-                        placeholder="Enter email"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <div
-                      className={`form-item ${
-                        touched.password && errors.password ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="password">Password</label>
-                      <Field
-                        type="password"
-                        name="password"
-                        placeholder="Enter password"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <ListErrors errors={auth.errors} />
-                    <div className="form-item">
-                      <button type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? "Please wait..." : "Register"}
-                      </button>
-                    </div>
-                    <div className="form-item form-rule">
-                      <Link className="light-button" to={"/login"}>
-                        Log in to an account
-                      </Link>
-                    </div>
-                  </Form>
-                )}
-              </Formik>
-            </div>
+        <h1>National Health Monitor System</h1>
+      </div>
+      <div className="main">
+        <div className="main-wrap">
+          <div className="focus-wrap">
+            <h2>Register for an account</h2>
+            <Formik
+              initialValues={{
+                firstname: "",
+                lastname: "",
+                email: "",
+                password: ""
+              }}
+              validationSchema={RegisterSchema}
+              onSubmit={(payload, { setSubmitting }) => {
+                // alert(payload.email)
+                handleSubmit(
+                  payload.firstname,
+                  payload.lastname,
+                  payload.email,
+                  payload.password
+                );
+                setSubmitting(false);
+              }}
+            >
+              {({ touched, errors, isSubmitting }) => (
+                <Form>
+                  <div
+                    className={`form-item ${
+                      touched.firstname && errors.firstname ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="firstname">First Name</label>
+                    <Field
+                      name="firstname"
+                      type="text"
+                      placeholder="Enter your first name"
+                    />
+                    <ErrorMessage
+                      name="firstname"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <div
+                    className={`form-item ${
+                      touched.lastname && errors.lastname ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="lastname">Last name</label>
+                    <Field
+                      name="lastname"
+                      type="text"
+                      placeholder="Enter your last name"
+                    />
+                    <ErrorMessage
+                      name="lastname"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <div
+                    className={`form-item ${
+                      touched.email && errors.email ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="email">Email</label>
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <div
+                    className={`form-item ${
+                      touched.password && errors.password ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="password">Password</label>
+                    <Field
+                      type="password"
+                      name="password"
+                      placeholder="Enter password"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <ListErrors errors={auth.errors} />
+                  <div className="form-item">
+                    <button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Please wait..." : "Register Account"}
+                    </button>
+                  </div>
+                  <div className="form-item">
+                    <Link to={"/login"}>
+                      <span>Already have an account? </span>
+                      Log in
+                    </Link>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>

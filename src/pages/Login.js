@@ -23,73 +23,72 @@ function Login() {
   return (
     <div id="focus">
       <div id="focus-header">
-        <h1>Pandemic Alert System</h1>
-        <div className="main">
-          <div className="main-wrap">
-            <div className="focus-wrap">
-              <div className="box-header">
-                <h2>Log in</h2>
-              </div>
-              <Formik
-                initialValues={{ email: "", password: "" }}
-                validationSchema={LoginSchema}
-                onSubmit={(payload, { setSubmitting }) => {
-                  handleSubmit(payload.email, payload.password);
-                  setSubmitting(false);
-                }}
-              >
-                {({ touched, errors, isSubmitting }) => (
-                  <Form>
-                    <div
-                      className={`form-item ${
-                        touched.email && errors.email ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="email">Email</label>
-                      <Field
-                        name="email"
-                        type="email"
-                        placeholder="Enter email"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <div
-                      className={`form-item ${
-                        touched.password && errors.password ? "error" : ""
-                      }`}
-                    >
-                      <label htmlFor="password">Password</label>
-                      <Field
-                        type="password"
-                        name="password"
-                        placeholder="Enter password"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        className="error-message"
-                        component="div"
-                      />
-                    </div>
-                    <ListErrors errors={auth.errors} />
-                    <div className="form-item">
-                      <button type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? "Please wait..." : "Login"}
-                      </button>
-                    </div>
+        <h1>National Health Monitor System</h1>
+      </div>
+      <div className="main">
+        <div className="main-wrap">
+          <div className="focus-wrap">
+            <h2>Account Log In</h2>
+            <Formik
+              initialValues={{ email: "", password: "" }}
+              validationSchema={LoginSchema}
+              onSubmit={(payload, { setSubmitting }) => {
+                handleSubmit(payload.email, payload.password);
+                setSubmitting(false);
+              }}
+            >
+              {({ touched, errors, isSubmitting }) => (
+                <Form>
+                  <div
+                    className={`form-item ${
+                      touched.email && errors.email ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="email">Email</label>
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <div
+                    className={`form-item ${
+                      touched.password && errors.password ? "error" : ""
+                    }`}
+                  >
+                    <label htmlFor="password">Password</label>
+                    <Field
+                      type="password"
+                      name="password"
+                      placeholder="Enter password"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      className="error-message"
+                      component="div"
+                    />
+                  </div>
+                  <ListErrors errors={auth.errors} />
+                  <div className="form-item">
+                    <button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Please wait..." : "Log In"}
+                    </button>
+                  </div>
 
-                    <div className="form-item form-rule">
-                      <Link className="light-button" to={"/register"}>
-                        Register for an account
-                      </Link>
-                    </div>
-                  </Form>
-                )}
-              </Formik>
-            </div>
+                  <div className="form-item">
+                    <Link to={"/register"}>
+                      <span>Don't have an account? </span>
+                      Sign Up
+                    </Link>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>

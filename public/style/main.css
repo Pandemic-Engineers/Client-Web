@@ -2,14 +2,50 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body {font-size:12.8px; font-family:'Baloo 2', sans-serif; font-weight:300; line-height: normal; height:100%; background:#F0F3F5; color:#2D3242;}
 html, #root, #site-wrap {height:100%; background:#F0F3F5;}
 * {-webkit-font-smoothing: antialiased;}
-a {text-decoration: none; color:#25376c; cursor: pointer}
-a:hover {color:#29479f;}
-h1 {font-size: 1.2rem; font-size:1.5rem; padding-bottom: 20px; font-weight: 700;}
-button {background:#25376c; color: #fff; font-weight: 600; cursor:pointer; outline:none; border:none; border-radius: 3px}
-button:hover {background: #29479f; cursor: pointer;}
+a {text-decoration: none; color:#FFCC33; cursor: pointer}
+a:hover {color:#FFD75D;}
+h1 {font-size:1.5rem; padding-bottom: 20px; font-weight: 700;}
+h2 {font-size:1.5rem; padding-bottom: 20px; font-weight: 700;}
+button {background:#FFCC33; color: #2D3242; font-weight: 600; cursor:pointer; outline:none; border:none; }
+button:hover {background: #FFD75D; cursor: pointer;}
 input {outline:none;}
 strong {font-weight: bold}
 
+#focus { text-align: center; background:#101316 url("../background.jpg"); background-size:cover; min-height:100%; color:#fff }
+#focus-header {padding:10px 0 120px 10px; text-align: left;}
+#focus-header h1 { color:#fff; text-align: left; font-size:1.2rem;}
+.focus-wrap {border-radius: 8px; margin:3% auto 0 auto; max-width:500px; padding-bottom: 20px}
+.focus-wrap h2 {border-bottom: none; padding: 0 3.5% 18px 3.5%; font-weight: bold}
+.focus-wrap a span {color:#777}
+.focus-wrap .error-message {text-align:left; padding-top:2px}
+.main {padding: 0 0 60px 0; font-weight: 400;}
+.main-wrap {max-width:990px; margin: 0 auto; padding: 0 1.5%; box-sizing:border-box;}
+
+.box-header {padding: 18px 3.5%;}
+
+.form-item {display: block; padding: 12px 3.5%;}
+.focus-wrap .form-item label {color:#fff}
+.form-item label {font-size: 0.9rem; color:#111; text-align: left; display: block; text-transform: uppercase; margin-bottom: 10px;}
+.form-item label span {font-size:0.8rem; color:#777; text-transform: none;}
+.form-info {font-size:1rem; text-align: left; font-weight: bold; display: block;}
+#focus .form-item label {margin-bottom: 10px; border: none }
+.form-item input {width:100%; font-size: 1rem; padding: 12px 2%; color:#111; background:#f3f3f3; border:none}
+.form-item input::placeholder {color:#bbb}
+.form-item textarea {width:96%; font-size: 1.2rem; padding: 2px 2%; border: solid 1px #EAECF4; color:#111; border-radius: 5px; height:150px}
+.form-item textarea.Shorter {height:60px;}
+.form-item input:focus, .form-item textarea:focus {border-color: #007eff; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 0 3px rgba(0, 126, 255, 0.1); outline: none;}
+.form-item button {width:100%; padding: 16px 0; font-size: 1rem; margin-top: 16px;}
+.form-item button i {padding-right:10px;}
+.form-item span.ReferenceInput {width:98%; font-size: 1.2rem; padding: 5px 1%; border: solid 1px #777; background: #fff; display: block; text-align: left; color:#777; border-radius: 5px}
+.form-item select {width:100%; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #EAECF4; color:#111;}
+.form-item input[type=file] {font-size:1rem;}
+.form-item .disabled {color:#999}
+.form-item .NumberBox {width:96%; display: block; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #777; color:#111; border-radius: 5px; background:#f0f0f0;}
+.form-item p {margin-bottom: 10px;}
+.form-itemGap {padding-bottom: 30px;}
+
+
+/* ---- */
 #modal {text-align: center; padding-top: 500px; height:100%; box-sizing: border-box; background:#323b57; color:#fff;}
 #modal h1 { text-align: center; font-size: 3rem; color:#fff;}
 #loading {text-align: center; padding: 50px 0; font-size: 1.5rem; }
@@ -19,8 +55,7 @@ strong {font-weight: bold}
 #header h1 {font-weight:700; font-size: 1.28rem; color:#2D3242; display: block; padding-top: 19px }
 #header h1 .alt {font-weight: 700}
 #header span {float:right; padding: 22px 30px 0 0; font-size: 1rem;}
-.main {padding: 0 0 30px 0; font-weight: 400;}
-.main-wrap {max-width:990px; margin: 0 auto; padding: 0 1.5%; box-sizing:border-box;}
+
 #footer {width:100%; background: #12182a; border-top: solid 3px #444C63;}
 #footer-wrap {max-width:990px; margin: 0 auto; padding: 50px 1.5% 30px 1.5%; font-size: 1rem; box-sizing:border-box;}
 #footer-links {float:right; display:block; color:#fff; font-size: 0.85rem;}
@@ -103,11 +138,7 @@ strong {font-weight: bold}
 #nav-last i {float:right; color:#EAECF4; padding: 2px 30px 0 0 }
 #nav-last a:hover i {color:#FA6C39}
 
-#focus { text-align: center; background:#323b57; background-size:cover; min-height:100% }
-#focus-header {padding:80px 0 0 0; text-align: left;}
-#focus-header h1 {font-weight: 700; color:#fff; text-align: center}
-.focus-wrap {border-radius: 8px; margin:3% auto 0 auto; max-width:500px; background:#fff; border: solid 1px #EAECF4; border-radius: 8px; padding-bottom: 20px}
-.focus-wrap h2 {border-bottom: none; font-size: 1rem; padding: 0 3.5%; font-weight: bold}
+
 .auth-hint {font-size: 1rem; color:#999; display: block; padding-bottom: 5px;}
 
 .table-list-simple {box-sizing:border-box; width: 93%; font-size: 1rem; margin:15px 0 10px 0; border-bottom: solid 1px #1B1E20; margin-left:3.5%;}
@@ -136,31 +167,11 @@ strong {font-weight: bold}
 #content-wrap {margin: 28px; background:#fff; border: solid 1px #EAECF4; border-radius: 8px; padding-bottom: 20px;}
 #content-clear {margin: 28px; }
 
-.box-header {padding: 18px 3.5%; border-bottom: solid 1px #EAECF4;}
+
 #content h2 {font-weight:400; font-size: 1rem; font-weight: bold; }
 .header-button {float:right; display:block; background:#FA6C39; color:#fff; padding: 5px 10px; border-radius: 3px; margin-left:10px;}
 .header-button:hover {background:#eb8a64}
 .header-info {float:right;}
-.form-item {display: block; padding: 18px 3.5%;}
-.focus-wrap .form-item {padding-left:7%; padding-right:7%}
-.form-item label {font-size: 0.9rem; color:#111; text-align: left; display: block; text-transform: uppercase; margin-bottom: 10px;}
-.form-item label span {font-size:0.8rem; color:#777; text-transform: none;}
-.form-info {font-size:1rem; text-align: left; font-weight: bold; display: block;}
-#focus .form-item label {margin-bottom: 10px; border: none }
-.form-item input {width:100%; font-size: 1rem; padding: 12px 2%; color:#111; border: solid 1px #EAECF4; background:#f3f3f3; border-radius: 3px;}
-.form-item input::placeholder {color:#bbb}
-.form-item textarea {width:96%; font-size: 1.2rem; padding: 2px 2%; border: solid 1px #EAECF4; color:#111; border-radius: 5px; height:150px}
-.form-item textarea.Shorter {height:60px;}
-.form-item input:focus, .form-item textarea:focus {border-color: #007eff; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 0 3px rgba(0, 126, 255, 0.1); outline: none;}
-.form-item button {width:100%; padding: 16px 0; font-size: 1rem; margin-top: 16px;}
-.form-item button i {padding-right:10px;}
-.form-item span.ReferenceInput {width:98%; font-size: 1.2rem; padding: 5px 1%; border: solid 1px #777; background: #fff; display: block; text-align: left; color:#777; border-radius: 5px}
-.form-item select {width:100%; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #EAECF4; color:#111;}
-.form-item input[type=file] {font-size:1rem;}
-.form-item .disabled {color:#999}
-.form-item .NumberBox {width:96%; display: block; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #777; color:#111; border-radius: 5px; background:#f0f0f0;}
-.form-item p {margin-bottom: 10px;}
-.form-itemGap {padding-bottom: 30px;}
 .focus-wrap .form-item .SubmitButton {width:100%; float: none}
 .text-box {width:50%; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #999; color:#111; margin-top:10px}
 .text-box::placeholder {color:#bbb}
