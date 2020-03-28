@@ -23,12 +23,12 @@ export default () => {
       <Nav />
       <div id="content">
         <Header />
-        <div id="content-wrap">
+        <div className="content-wrap">
           <div className="box-header">
             <Link className="header-button" to="/sites/add">
-              Add Site
+              New Site
             </Link>
-            <h2>Site List</h2>
+            <h2>My Sites</h2>
           </div>
           <SiteList data={asset.sites} />
         </div>

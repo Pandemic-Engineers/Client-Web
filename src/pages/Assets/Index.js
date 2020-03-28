@@ -25,12 +25,12 @@ function Assets() {
       <Nav />
       <div id="content">
         <Header />
-        <div id="content-wrap">
+        <div className="content-wrap">
           <div className="box-header">
             <Link className="header-button" to="/assets/add">
-              Add Asset
+              Create Asset
             </Link>
-            <h2>Assets List</h2>
+            <h2>Assets</h2>
           </div>
           <AssetList data={asset.assets} />
         </div>

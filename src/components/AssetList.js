@@ -6,8 +6,8 @@ export default props => {
     <table className="table-list-simple">
       <thead>
         <tr>
-          <th>Key</th>
           <th>Name</th>
+          <th>Key</th>
           <th className="last">Created</th>
         </tr>
       </thead>
@@ -16,10 +16,10 @@ export default props => {
           return (
             <tr key={item.key}>
               <td className="important">
-                <Link to={`/assets/${item.key}`}>{item.key}</Link>
+                <Link to={`/assets/${item.key}`}>{item.name}</Link>
               </td>
               <td className="sub">
-                <Link to={`/assets/${item.key}`}>{item.name}</Link>
+                <Link to={`/assets/${item.key}`}>{item.key}</Link>
               </td>
               <td className="sub last">
                 <Link to={`/assets/${item.key}`}>{item.created}</Link>
