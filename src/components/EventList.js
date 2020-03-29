@@ -23,7 +23,7 @@ export default props => {
                 <Link to={`/events/${item.key}`}>{item.asset}</Link>
               </td>
               <td className="sub">
-                <Link to={`/events/${item.key}`}>{item.value}</Link>
+                <Link to={`/events/${item.key}`}>{item.value}C</Link>
               </td>
               <td className="sub last">
                 <Link to={`/events/${item.key}`}>{item.site}</Link>

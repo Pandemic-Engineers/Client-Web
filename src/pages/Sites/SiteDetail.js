@@ -8,8 +8,8 @@ import {
 import EventList from "../../components/EventList";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
-import GoogleMapReact from "google-map-react";
 import Graph from "../../components/widgets/Graph";
+import GoogleMapReact from "google-map-react";
 
 export default function() {
   let { key } = useParams();

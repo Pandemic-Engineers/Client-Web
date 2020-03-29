@@ -23,21 +23,29 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height={250}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="5 5" />
-          <XAxis dataKey="name" />
-          <YAxis type="number" domain={[35, 40]} width={30} />
-          <Tooltip />
-          <Line
-            type="linear"
-            dataKey="temp"
-            stroke="#FA6C39"
-            strokeWidth={2}
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      <div>
+        <ResponsiveContainer width="100%" height={250}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="5 5" />
+            <XAxis dataKey="name" />
+            <YAxis
+              type="number"
+              domain={[35, 40]}
+              width={30}
+              minTickGap={0.5}
+              interval={0}
+            />
+            <Tooltip />
+            <Line
+              type="linear"
+              dataKey="temp"
+              stroke="#FA6C39"
+              strokeWidth={2}
+              activeDot={{ r: 8 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     );
   }
 }
