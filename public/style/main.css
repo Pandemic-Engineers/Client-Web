@@ -84,17 +84,21 @@ strong {font-weight: bold}
 .table-list-small td:hover {color:#25376c; cursor: pointer;}
 .task-button {padding: 3px 10px; background:#999; }
 
-.box-list {display:block; padding: 20px; overflow: auto;}
+.box-list {display:block; padding: 20px 3.5%; overflow: auto;}
 .box-list li {display:block; float:left; width: 31.3%; box-sizing: border-box; padding: 20px; background: #C8C9CA; margin-right:2%; text-align: center;}
 .box-list li:hover {background:#aaa}
 .box-list strong {color:#101316; display: block; font-size: 1.2rem; height:58px;}
 .box-list span {color:#777; display: block; font-size: 0.8rem;}
 .box-list em {color:#101316; display: block; font-size: 0.8rem;}
 
-.dashboard-list {display:block; padding: 20px; overflow: auto;}
+.dashboard-list {display:block; padding: 20px 3.5%; overflow: auto;}
 .dashboard-list li {display:block; float:left; width: 31.3%; box-sizing: border-box; padding: 20px; background: #F8F8F8; margin-right:2%; text-align: center;}
 .dashboard-list strong {color:#101316; display: block; font-size: 1.2rem; }
 .dashboard-list em {color:#FA6C39; display: block; font-size: 2.6rem;}
+
+.map-pin {width:10px; height:15px;}
+.map-box {padding: 0 3.5%; width:100%; height:100px}
+.graph-box {padding: 0 3.5%; width:100%; height:300px; margin-top:20px;}
 
 /* ---- */
 #modal {text-align: center; padding-top: 500px; height:100%; box-sizing: border-box; background:#323b57; color:#fff;}

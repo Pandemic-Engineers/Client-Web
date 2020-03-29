@@ -8,6 +8,8 @@ import {
 import EventList from "../../components/EventList";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
+import GoogleMapReact from "google-map-react";
+import Graph from "../../components/widgets/Graph";
 
 export default function() {
   let { key } = useParams();
@@ -22,6 +24,9 @@ export default function() {
     return <div id="loading">loading...</div>;
   }
 
+  const lat = parseInt(asset.site.latitude * 1000000) / 1000000;
+  const lng = parseInt(asset.site.longitude * 1000000) / 1000000;
+
   return (
     <div id="main">
       <Nav />
@@ -31,7 +36,7 @@ export default function() {
           <div className="box-header">
             <h2>{asset.site.name}</h2>
           </div>
-          <ul class="dashboard-list">
+          <ul className="dashboard-list">
             <li>
               <strong>Assets</strong>
               <em>21</em>
@@ -45,6 +50,20 @@ export default function() {
               <em>Time</em>
             </li>
           </ul>
+          <div className="map-box">
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: "AIzaSyChP3vkShVB0f9F_pWR-f9RoevDAuY5lPQ"
+              }}
+              defaultCenter={{ lat: lat, lng: lng }}
+              defaultZoom={11}
+            >
+              <img className="map-pin" src="/pin.png" lat={lat} lng={lng} />
+            </GoogleMapReact>
+          </div>
+          <div className="graph-box">
+            <Graph />
+          </div>
         </div>
         <div className="content-wrap">
           <div className="box-header">
@@ -52,7 +71,7 @@ export default function() {
               className="header-button"
               to={`/events/add?from=site&key=${asset.site.key}`}
             >
-              Add Events
+              Create Event
             </Link>
             <h2>Recent Events</h2>
           </div>

@@ -9,7 +9,7 @@ export default props => {
           <th>Time</th>
           <th>Asset</th>
           <th>Value</th>
-          <th>Site</th>
+          <th className="last">Site</th>
         </tr>
       </thead>
       <tbody>
