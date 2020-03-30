@@ -31,7 +31,15 @@ function Assets({}) {
   // const handleSubmit = (name) => dispatch(updateAsset(key, name))
 
   if (!asset.asset) {
-    return <div>loading...</div>;
+    return (
+      <div id="main">
+        <Nav />
+        <div id="content">
+          <Header />
+          <div id="loading">loading...</div>
+        </div>
+      </div>
+    );
   }
   const handleClick = name => ev => {
     ev.preventDefault();

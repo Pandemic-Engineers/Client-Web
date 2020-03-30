@@ -6,6 +6,7 @@ import {
   unloadSiteDetail
 } from "../../redux/actions/asset.actions";
 import EventList from "../../components/EventList";
+import AssetList from "../../components/AssetList";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import Graph from "../../components/widgets/Graph";
@@ -21,7 +22,15 @@ export default function() {
   }, [key]);
 
   if (!asset.site) {
-    return <div id="loading">loading...</div>;
+    return (
+      <div id="main">
+        <Nav />
+        <div id="content">
+          <Header />
+          <div id="loading">loading...</div>
+        </div>
+      </div>
+    );
   }
 
   const lat = parseInt(asset.site.latitude * 1000000) / 1000000;
@@ -65,17 +74,25 @@ export default function() {
             <Graph />
           </div>
         </div>
-        <div className="content-wrap">
-          <div className="box-header">
-            <Link
-              className="header-button"
-              to={`/events/add?from=site&key=${asset.site.key}`}
-            >
-              Create Event
-            </Link>
-            <h2>Recent Events</h2>
+        <div className="content-wrap-clear">
+          <div className="content-wrap content-wrap-narrow">
+            <div className="box-header">
+              <Link
+                className="header-button"
+                to={`/events/add?from=site&key=${asset.site.key}`}
+              >
+                Create Event
+              </Link>
+              <h2>Recent Events</h2>
+            </div>
+            <EventList data={asset.events.events} mode="small" />
           </div>
-          <EventList data={asset.events.events} />
+          <div className="content-wrap content-wrap-narrow content-wrap-last">
+            <div className="box-header">
+              <h2>Recent Assets</h2>
+            </div>
+            <AssetList data={[]} mode="small" />
+          </div>
         </div>
       </div>
     </div>

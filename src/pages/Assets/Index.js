@@ -18,7 +18,15 @@ function Assets() {
   }, []);
 
   if (!asset.assets) {
-    return <div id="loading">loading...</div>;
+    return (
+      <div id="main">
+        <Nav />
+        <div id="content">
+          <Header />
+          <div id="loading">loading...</div>
+        </div>
+      </div>
+    );
   }
   return (
     <div id="main">

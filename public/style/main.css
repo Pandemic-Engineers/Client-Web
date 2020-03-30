@@ -20,6 +20,11 @@ strong {font-weight: bold}
 .focus-wrap .error-message {text-align:left; padding-top:2px}
 .main {padding: 0 0 60px 0; font-weight: 400;}
 .main-wrap {max-width:990px; margin: 0 auto; padding: 0 1.5%; box-sizing:border-box;}
+.content-wrap {margin: 28px; background:#fefefe; border: solid 1px #EAECF4; padding-bottom: 20px;}
+.content-narrow {width:500px; margin: 50px auto 20px auto}
+.content-wrap-clear {margin: 28px;}
+.content-wrap-narrow {width:49%; margin: 20px 2% 20px 0; float:left; box-sizing: border-box;}
+.content-wrap-last {margin-right:0}
 
 .box-header {padding: 10px 3.5%; background: #101316; color: #fff;}
 .box-header h2 {padding-bottom: 0}
@@ -56,7 +61,7 @@ strong {font-weight: bold}
 #focus .form-item label {margin-bottom: 10px; border: none }
 .form-item input {width:100%; font-size: 1rem; padding: 12px 2%; color:#111; background:#f3f3f3; border:none}
 .form-item input::placeholder {color:#bbb}
-.form-item textarea {width:96%; font-size: 1.2rem; padding: 2px 2%; border: solid 1px #EAECF4; color:#111; border-radius: 5px; height:150px}
+.form-item textarea {width:100%; font-size: 1.2rem; padding: 2px 2%; border: none; background:#f3f3f3; color:#111; height:70px}
 .form-item textarea.Shorter {height:60px;}
 .form-item input:focus, .form-item textarea:focus {border-color: #007eff; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 0 3px rgba(0, 126, 255, 0.1); outline: none;}
 .form-item button {width:100%; padding: 16px 0; font-size: 1rem; margin-top: 16px;}
@@ -68,13 +73,15 @@ strong {font-weight: bold}
 .form-item .NumberBox {width:96%; display: block; font-size: 1.2rem; padding: 5px 2%; border: solid 1px #777; color:#111; border-radius: 5px; background:#f0f0f0;}
 .form-item p {margin-bottom: 10px;}
 .form-itemGap {padding-bottom: 30px;}
+.form-item-first {padding-top:24px;}
 
 .table-list-simple {box-sizing:border-box; width: 93%; font-size: 1rem; margin:15px 0 10px 0; border-bottom: solid 1px #1B1E20; margin-left:3.5%;}
 .table-list-simple td {text-align: center; border-bottom: solid 1px #EAECF4; vertical-align: top; padding: 0; font-size: 0.9rem; text-align: left}
-.table-list-simple th {color:#101316; padding: 8px 0; text-align: left}
+.table-list-simple th {color:#101316; padding: 8px 0; text-align: left;}
 .table-list-simple th.last {text-align: right}
 .table-list-simple tr:hover {background:#fcfcfc}
 .table-list-simple td.important {font-weight: bold;}
+.table-list-simple td.highlight {color:#FA6C39;}
 .table-list-simple td.last {text-align: right;}
 .table-list-simple td a {width:100%; color:#2D3242; display:block; padding: 25px 0}
 .table-list-simple td.slim {padding: 15px 0}
@@ -84,14 +91,14 @@ strong {font-weight: bold}
 .table-list-small td:hover {color:#25376c; cursor: pointer;}
 .task-button {padding: 3px 10px; background:#999; }
 
-.box-list {display:block; padding: 20px 3.5%; overflow: auto;}
-.box-list li {display:block; float:left; width: 31.3%; box-sizing: border-box; padding: 20px; background: #C8C9CA; margin-right:2%; text-align: center;}
-.box-list li:hover {background:#aaa}
+.box-list {display:block; padding: 30px 3.5%;  overflow: auto;}
+.box-list li {display:block; float:left; width: 31.3%; box-sizing: border-box; padding: 38px 20px; background: #fff; margin-right:2%; text-align: center; border: solid 1px #E7E8F2}
+.box-list li:hover {border-color:#FFCC33}
 .box-list strong {color:#101316; display: block; font-size: 1.2rem; height:58px;}
-.box-list span {color:#777; display: block; font-size: 0.8rem;}
+.box-list span {color:#777; display: block; font-size: 0.8rem; padding-bottom: 8px}
 .box-list em {color:#101316; display: block; font-size: 0.8rem;}
 
-.dashboard-list {display:block; padding: 20px 3.5%; overflow: auto;}
+.dashboard-list {display:block; padding: 30px 3.5% 20px 3.5%; overflow: auto;}
 .dashboard-list li {display:block; float:left; width: 31.3%; box-sizing: border-box; padding: 20px; background: #F8F8F8; margin-right:2%; text-align: center;}
 .dashboard-list strong {color:#101316; display: block; font-size: 1.2rem; }
 .dashboard-list em {color:#FA6C39; display: block; font-size: 2.6rem;}
@@ -105,7 +112,7 @@ strong {font-weight: bold}
 /* ---- */
 #modal {text-align: center; padding-top: 500px; height:100%; box-sizing: border-box; background:#323b57; color:#fff;}
 #modal h1 { text-align: center; font-size: 3rem; color:#fff;}
-#loading {text-align: center; padding: 50px 0; font-size: 1.5rem; }
+#loading {text-align: center; padding: 100px 0 50px 0; font-size: 2rem; }
 
 
 #footer {width:100%; background: #12182a; border-top: solid 3px #444C63;}
@@ -184,7 +191,6 @@ strong {font-weight: bold}
 .main h3 { font-size: 1.0rem; margin: 15px 0px 0 0px; border-bottom:none }
 
 #content { margin-left: 220px;}
-.content-wrap {margin: 28px; background:#fff; border: solid 1px #EAECF4; padding-bottom: 20px;}
 #content-clear {margin: 28px; }
 
 #content h2 {font-weight:400; font-size: 1rem; font-weight: bold; }
