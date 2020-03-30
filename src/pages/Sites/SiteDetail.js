@@ -24,7 +24,7 @@ export default function() {
   if (!asset.site) {
     return (
       <div id="main">
-        <Nav />
+        <Nav selected={"sites"} />
         <div id="content">
           <Header />
           <div id="loading">loading...</div>
@@ -38,7 +38,7 @@ export default function() {
 
   return (
     <div id="main">
-      <Nav />
+      <Nav selected={"sites"} />
       <div id="content">
         <Header />
         <div className="content-wrap">

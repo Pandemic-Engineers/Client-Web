@@ -3,7 +3,7 @@ import {
   ASYNC_END,
   REDIRECT
 } from "../constants/common.action.types";
-import { LOGIN, REGISTER } from "../constants/auth.action.types";
+import { LOGIN, LOGOUT, REGISTER } from "../constants/auth.action.types";
 import {
   ASSET_CREATE,
   ASSET_UPDATE,
@@ -31,8 +31,10 @@ export default (state = defaultState, action) => {
           ? action.payload.token
           : null,
         currentUser: action.error ? null : action.payload,
-        redirectTo: action.error ? null : action.payload.token ? "/" : ""
+        redirectTo: action.error ? null : action.payload.token ? "/assets" : ""
       };
+    case LOGOUT:
+      return { ...state, redirectTo: "/", token: null, currentUser: null };
     case ASSET_CREATE:
     case ASSET_UPDATE:
       return {

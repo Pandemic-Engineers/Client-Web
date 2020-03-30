@@ -14,6 +14,7 @@ import AssetAdd from "./Assets/AssetAdd";
 import Sites from "./Sites/Index";
 import SiteDetail from "./Sites/SiteDetail";
 import SiteAdd from "./Sites/SiteAdd";
+import Events from "./Events/Index";
 import EventAdd from "./Events/Add";
 
 function App() {
@@ -44,7 +45,8 @@ function App() {
           <Route exact path="/sites/add" component={SiteAdd} />
           <Route path="/sites/:key" component={SiteDetail} />>
           <Route path="/sites" component={Sites} />
-          <Route path="/events/add" component={EventAdd} />
+          <Route exact path="/events/add" component={EventAdd} />
+          <Route path="/events" component={Events} />
           <Redirect from="*" to="/" />
         </Switch>
       </ErrorBoundary>

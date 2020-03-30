@@ -33,7 +33,7 @@ function Assets({}) {
   if (!asset.asset) {
     return (
       <div id="main">
-        <Nav />
+        <Nav selected={"assets"} />
         <div id="content">
           <Header />
           <div id="loading">loading...</div>
@@ -49,7 +49,7 @@ function Assets({}) {
   const events = asset.events.events;
   return (
     <div id="main">
-      <Nav />
+      <Nav selected={"assets"} />
       <div id="content">
         <Header />
         <div className="content-wrap">

@@ -5,11 +5,11 @@ import {
   getAssetList,
   unloadAssetList
 } from "../../redux/actions/asset.actions";
-import AssetList from "../../components/AssetList";
+import EventList from "../../components/EventList";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 
-function Assets() {
+function Events() {
   const asset = useSelector(state => state.asset);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -17,10 +17,10 @@ function Assets() {
     return () => dispatch(unloadAssetList());
   }, []);
 
-  if (!asset.assets) {
+  if (!asset.events) {
     return (
       <div id="main">
-        <Nav selected={"assets"} />
+        <Nav selected={"events"} />
         <div id="content">
           <Header />
           <div id="loading">loading...</div>
@@ -30,21 +30,21 @@ function Assets() {
   }
   return (
     <div id="main">
-      <Nav selected={"assets"} />
+      <Nav selected={"events"} />
       <div id="content">
         <Header />
         <div className="content-wrap">
           <div className="box-header">
-            <Link className="header-button" to="/assets/add">
-              Create Asset
+            <Link className="header-button" to="/events/add">
+              Create Event
             </Link>
-            <h2>Assets</h2>
+            <h2>Events</h2>
           </div>
-          <AssetList data={asset.assets} />
+          <EventList data={asset.events} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Assets;
+export default Events;

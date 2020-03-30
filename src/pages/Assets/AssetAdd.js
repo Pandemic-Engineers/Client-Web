@@ -19,12 +19,12 @@ function AssetAdd() {
   const handleSubmit = name => dispatch(createAsset(name));
   return (
     <div id="main">
-      <Nav />
+      <Nav selected={"assets"} />
       <div id="content">
         <Header />
         <div className="content-wrap content-narrow">
           <div className="box-header">
-            <h2>Create New Site</h2>
+            <h2>Create New Asset</h2>
           </div>
           <Formik
             initialValues={{ name: "" }}

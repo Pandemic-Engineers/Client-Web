@@ -13,6 +13,7 @@
     "formik": "^2.1.4",
     "google-map-react": "^1.1.7",
     "history": "^4.10.1",
+    "moment": "^2.24.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
@@ -33,7 +34,7 @@
     "redux-logger": "^3.0.6"
   },
   "scripts": {
-    "start": "SET PORT=3001 & react-scripts start",
+    "start": "SET PORT=3003 & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

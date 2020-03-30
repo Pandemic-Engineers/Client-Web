@@ -19,7 +19,7 @@ export default () => {
   const handleSubmit = name => dispatch(createSite(name));
   return (
     <div id="main">
-      <Nav />
+      <Nav selected={"sites"} />
       <div id="content">
         <Header />
         <div className="content-wrap content-narrow">
